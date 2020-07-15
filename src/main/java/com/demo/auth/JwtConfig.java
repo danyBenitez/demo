@@ -1,6 +1,6 @@
 package com.demo.auth;
 
-public class JwtConfig {
+public class JwtConfig {  
 	
 	public static final String RSA_PRIVADA= "-----BEGIN RSA PRIVATE KEY-----\r\n" + 
 			"MIIEogIBAAKCAQEAuxe9phk284jHTCX6s9yK1EEch6WuuEVadAKCFbWI7DblAA7g\r\n" + 
