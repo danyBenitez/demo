@@ -1,6 +1,7 @@
 package com.demo.auth.model.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -50,5 +51,25 @@ public class UsuarioServices implements UserDetailsService, IUsuarioServices{
 	public Usuario findByUsername(String username) {
 		return this.usuarioDAO.findByUsername(username);
 	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Usuario> findAllUsuarios() {
+		
+		return (List<Usuario>) this.usuarioDAO.findAll();
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Optional<Usuario> findIdUser(Long idusuario) {
+		return this.usuarioDAO.findById(idusuario);
+	}
+
+	@Override
+	@Transactional(readOnly = false)
+	public Usuario saveUser(Usuario usuario) {
+		return this.usuarioDAO.save(usuario);
+	}
+	
 
 }
